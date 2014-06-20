@@ -94,14 +94,14 @@ class PoseDesigner {
   SliderRefreshFn<PoseDesigner> update_slider_fn_;
 
   boost::shared_ptr<SimpleSlider> sl_bend_, sl_side_, sl_twist_, sl_joint_no_;
-  shared_ptr<SimpleSlider> sl_theta_, sl_phi_, sl_tilt_, sl_dist_mult_;
+  boost::shared_ptr<SimpleSlider> sl_theta_, sl_phi_, sl_tilt_, sl_dist_mult_;
 
   SceneSpec scene_spec_;
   HandCameraSpec camera_spec_;
   HandRenderer hand_renderer_;
   ImageToHogCalculator hog_calc_;
 
-  shared_ptr<FullHandPose> hand_pose_;
+  boost::shared_ptr<FullHandPose> hand_pose_;
   cv::Mat display_, cam_sketch_;
   bool render_help_;
   bool render_hog_;
