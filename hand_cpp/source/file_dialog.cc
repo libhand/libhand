@@ -20,6 +20,7 @@
 
 # include <stdexcept>
 # include <string>
+# include <unistd.h>
 
 namespace libhand {
 

@@ -117,9 +117,9 @@ class HandRendererPrivate {
   const string scene_rsrc_name_;
 
   shared_array<char> pixel_data_;
-  shared_ptr<GLPlugin> gl_plugin_;
-  shared_ptr<OctreePlugin> octree_plugin_;
-  shared_ptr<Root> root_;
+  boost::shared_ptr<GLPlugin> gl_plugin_;
+  boost::shared_ptr<OctreePlugin> octree_plugin_;
+  boost::shared_ptr<Root> root_;
 
   SceneSpec scene_spec_;
 

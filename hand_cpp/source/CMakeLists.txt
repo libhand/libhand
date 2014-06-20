@@ -1,10 +1,12 @@
 CMAKE_MINIMUM_REQUIRED (VERSION 2.8.6)
 
 IF(APPLE)
-  LIST(APPEND CMAKE_PREFIX_PATH "/opt/local")
-  LIST(APPEND CMAKE_MODULE_PATH "/opt/local/share/cmake/modules")
+  LIST(APPEND CMAKE_PREFIX_PATH "/usr/local")
+  LIST(APPEND CMAKE_MODULE_PATH "/usr/local/Cellar/ogre/1.7.4/CMake")
   LIST(APPEND CMAKE_FRAMEWORK_PATH "/opt/local/Library/Frameworks")
   SET(CMAKE_FIND_LIBRARY_SUFFIXES ".a;.framework;.dylib;.so")
+  LIST(APPEND LibHand_EXTRA_LIBS "-lboost_system -lboost_date_time -lz -lm -lbz2")
+  SET(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
 ELSE(APPLE)
   IF(UNIX)
     LIST(APPEND CMAKE_MODULE_PATH "/usr/local/lib/OGRE/cmake")
@@ -58,7 +60,7 @@ ADD_LIBRARY(hand_utils
   simple_slider.cc
   text_printer.cc)
 
-TARGET_LINK_LIBRARIES(hand_utils ${OpenCV_LIBS})
+TARGET_LINK_LIBRARIES(hand_utils ${OpenCV_LIBS} ${LibHand_EXTRA_LIBS})
 
 ADD_LIBRARY(hand_hog
   hog_cell.cc

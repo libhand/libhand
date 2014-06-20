@@ -93,7 +93,7 @@ class PoseDesigner {
   const string win_camera_;
   SliderRefreshFn<PoseDesigner> update_slider_fn_;
 
-  shared_ptr<SimpleSlider> sl_bend_, sl_side_, sl_twist_, sl_joint_no_;
+  boost::shared_ptr<SimpleSlider> sl_bend_, sl_side_, sl_twist_, sl_joint_no_;
   shared_ptr<SimpleSlider> sl_theta_, sl_phi_, sl_tilt_, sl_dist_mult_;
 
   SceneSpec scene_spec_;
