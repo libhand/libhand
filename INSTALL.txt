@@ -1,0 +1,260 @@
+LibHand v0.9
+Copyright (c) 2011, Marin Saric <marin.saric@gmail.com>
+All rights reserved.
+
+http://www.libhand.org/ -- the most up-to-date information on LibHand.
+
+
+    LibHand installation guide
+
+Contents:
+(1) General Install Notes
+(2) Installing Dependencies on MacOS X
+  (2.1) MATLAB precautions for MacOS X
+(3) Installing Dependencies on Ubuntu Linux
+  (3.1) Installing a brand new OpenCV on Ubuntu Linux
+  (3.2) Installing CMake 2.8.6. on Linux
+  (3.3) MATLAB precautions for Linux
+(4) Compiling everything in LibHand
+   (4.1) Compiling the examples
+   (4.2) Compiling the MATLAB interface
+
+----------------------------------------
+  (1) General Install Notes
+----------------------------------------
+
+**************************************************
+REMINDER: 
+  Make sure to check www.libhand.org for updates.
+  There might be pre-compiled versions of dependencies or even the
+  LibHand code, making the installation much easier.
+**************************************************
+
+To build libhand, you will need at least CMake 2.8.6 (very recent at the
+time of the LibHand release).
+CMake is available for both MacOS and Linux.
+
+LibHand depends on the Boost library, the OGRE library and the OpenCV
+library. To simplify the deployment of LibHand, it is built statically
+against OGRE. If you do not plan to use LibHand inside MATLAB, you can make
+in a completely dynamic library environment but that mode of operation is
+not officially supported.
+
+This means that you will have to obtain a static version of the OGRE
+library. On MacOS X, a static version of OpenCV is also required.
+
+Both OGRE and OpenCV provide build instructions. There's pre-compiled
+versions of these libraries on www.libhand.org for some platforms.
+
+----------------------------------------
+  (2) Installing Dependencies on MacOS X
+----------------------------------------
+
+For a lot of MacOS X open-source development, MacPorts is a
+pre-requisite. Please install MacPorts first, available from this link:
+
+To install boost, do:
+
+  sudo port install boost
+
+To install a static version of OGRE simply do:
+
+  sudo port install ogre
+
+To install a static version of OpenCV, you have to build it from source
+using the instructions at http://www.opencv.org/ or try out the pre-built
+OpenCV package supplied on www.libhand.org.
+
+A dynamic+static version of OpenCV is currently under review  for
+MacPorts. In the future, a simple
+
+sudo port install opencv
+might be all that is needed.
+
+A static version of OpenCV is needed primarily for the MATLAB build. If you
+do not plan to use MATLAB, you can install a dynamic version of OpenCV.
+
+To install cmake, do:
+  sudo port install cmake
+
+For a less quirky file open/save dialog you can install the MacPorts version
+of Tk:
+
+  sudo port install tk
+
+----------------------------------------
+   (2.1) MATLAB precautions for MacOS X
+----------------------------------------
+
+MacOS X 10.7 arrived with a completely new compiler system enabled by
+default -- clang. 
+When MATLAB R2011b shipped, the manufacturer did not anticipate clang
+becoming  the default. Thus MATLAB R2011b needs to be patched before
+it can compile code on MacOS X 10.7.
+
+
+----------------------------------------
+   (3) Installing Dependencies on Ubuntu Linux
+----------------------------------------
+
+Get the dependent low-level libraries by running:
+
+sudo apt-get install doxygen libxaw7-dev libxrandr-dev tcl tk \
+     libois-dev libtbb-dev libzzip-dev libfreeimage-dev \
+     libboost-thread-dev libboost-date-time-dev \
+     libjpeg-dev libtiff4-dev libbz2-dev subversion 
+
+There is a utility script for a smoother installation of OGRE v1.7.3.
+You can find it inside the install_help directory.
+
+The OpenCV library is available through apt-get. A static version of OpenCV
+is not required under Ubuntu Linux.
+
+----------------------------------------
+   (3.1) Installing a brand new OpenCV on Ubuntu Linux
+----------------------------------------
+svn co https://code.ros.org/svn/opencv/branches/2.3/opencv opencv
+
+cd opencv
+mkdir release
+cd release
+
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_PYTHON_SUPPORT=ON -DBUILD_SHARED_LIBS=OFF ..
+
+make -j2
+sudo make install
+cd ../..
+
+----------------------------------------
+   (3.2) Installing CMake 2.8.6. on Linux
+----------------------------------------
+wget http://www.cmake.org/files/v2.8/cmake-2.8.6.tar.gz
+tar xzvf cmake-2.8.6.tar.gz
+cd cmake-2.8.6
+
+make -j4
+sudo make install
+
+The "-j4" is assuming that you have a 4-core CPU. This flag speeds up
+the compilation significantly. You can provide a different number if
+you have more or less cores.
+
+----------------------------------------
+   (3.2) MATLAB precautions for Linux
+----------------------------------------
+
+On most newer Linux distributions, you have to start MATLAB with a
+special LD_PRELOAD directive. MATLAB ships with older versions of
+libraries. Technically MATLAB only supports certain versions of the
+GCC C/C++ Compiler Suite. Realistically, the versions supported by
+MATLAB are old enough to be very difficult to install on a newer Linux
+distribution.
+
+Instead, MATLAB can be coerced to start up with newer C/C++ libraries
+and this usually works without problems.
+
+Load MATLAB with:
+
+LD_PRELOAD=/usr/lib64/x86_64-linux-gnu/libstdc++.so.6 /usr/local/MATLAB/R2011b/bin/matlab
+
+(feel free to replace R2011b by your specific release of MATLAB)
+
+----------------------------------------
+   (4) Compiling everything in LibHand
+----------------------------------------
+
+First the LibHand C++ library needs to be installed.
+
+Make sure you have installed all of the dependencies for your OS.
+
+You will execute an "out-of-source" CMake build.
+
+cd hand_cpp
+mkdir -p build
+cd build
+
+cmake ..
+
+CMake will run, configure LibHand and print out some build
+diagnostics. If there are errors, feel free to report to the LibHand
+author Marin Saric: marin.saric@gmail.com. The build diagnostics can
+be used to debug the build problems.
+
+Next, start the LibHand build
+
+make -j4
+
+The "-j4" option denotes the number of cores for your CPU, to make
+things build a little faster.
+
+Next, make LibHand project install the libraries and the accompanying
+config files into the "hand_cpp/dist" folder. This will not write
+anything into your system directories and you do not need root for
+this step:
+
+make install
+
+If there are no errors, you can test the LibHand library by running
+the pose designer. From the root of the libhand directory, you can
+call
+
+hand_cpp/build/source/pose_designer
+
+----------------------------------------
+   (4.1) Compiling the examples
+----------------------------------------
+
+If step (4) succeded, the examples should compile without hassle.
+
+From the root of the LibHand distribution:
+
+cd examples
+mkdir -p build
+cd build
+
+cmake ..
+make
+
+The compiled example code will be located inside the build
+directory. You can run it to make sure it's working
+
+----------------------------------------
+   (4.2) Compiling the MATLAB interface
+----------------------------------------
+
+Before beginning this step, it is useful make sure that the mex compiler provided
+with MATLAB is working. Try compiling some MATLAB mex example code.
+
+Make sure that you read the MATLAB precautions in sections 2.1 or 3.3
+
+If you are sure that mex works well, then you can proceed
+
+Doing
+
+cd hand_matlab
+./mex_compile.sh
+
+should take care of everything.
+
+The MATLAB interface will live in "hand_matlab/dist"
+
+There is example code in "hand_matlab/examples"
+
+Start MATLAB, then cd into the "hand_matlab/examples" directory.
+
+Type
+add_paths
+simple_render
+
+simple_render should show you a rendered image of a human hand.
+
+====
+Copyright (c) 2011, Marin Saric <marin.saric@gmail.com>
+All rights reserved.
+
+This file is a part of LibHand. LibHand is open-source software. You can
+redistribute it and/or modify it under the terms of the LibHand license. The
+LibHand license is the BSD license with an added clause that requires
+academic citation. You should have received a copy of the LibHand license
+(the license.txt file) along with LibHand. If not, see
+<http://www.libhand.org/>

@@ -1,0 +1,33 @@
+%YAML:1.0
+
+# The directory containing all the meshes and .scene file
+# Note: The path is relative to this YAML file
+scene_dir: "ogre"
+
+# The .scene file name
+scene_file: "hand.scene"
+
+# The name of the hand object entity in the scene
+hand_object_name: hand
+
+# The bone map:
+# Each entry corresponds to the bone name in the armature of the hand mesh
+bone_map:
+   - "finger1joint1"  # Will be joint(0) in the FullHandPose class
+   - "finger1joint2"  # Will be joint(1) in the FullHandPose class
+   - "finger1joint3"  #    .. and so on ..
+   - "finger2joint1"
+   - "finger2joint2"
+   - "finger2joint3"
+   - "finger3joint1"
+   - "finger3joint2"
+   - "finger3joint3"
+   - "finger4joint1"
+   - "finger4joint2"
+   - "finger4joint3"
+   - "finger5joint1"
+   - "finger5joint2"
+   - "finger5joint3"
+   - "metacarpals"
+   - "carpals"
+   - "root"

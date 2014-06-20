@@ -1,0 +1,25 @@
+%YAML:1.0
+rotation: [ -9.5845758914947510e-02, 8.3791027449819921e-09,
+    -9.9539619684219360e-01, -7.5690525770187378e-01,
+    -6.4944797754287720e-01, 7.2881683707237244e-02,
+    -6.4645802974700928e-01, 7.6040601730346680e-01,
+    6.2246840447187424e-02 ]
+hand_joints:
+   finger1joint1: [ 0., 0., 0. ]
+   finger1joint2: [ 0., 0., 0. ]
+   finger1joint3: [ 0., 0., 0. ]
+   finger2joint1: [ 0., 0., 0. ]
+   finger2joint2: [ 0., 0., 0. ]
+   finger2joint3: [ 0., 0., 0. ]
+   finger3joint1: [ 0., 0., 0. ]
+   finger3joint2: [ 0., 0., 0. ]
+   finger3joint3: [ 0., 0., 0. ]
+   finger4joint1: [ 0., 0., 0. ]
+   finger4joint2: [ 0., 0., 0. ]
+   finger4joint3: [ 0., 0., 0. ]
+   finger5joint1: [ 0., 0., 0. ]
+   finger5joint2: [ 0., 0., 0. ]
+   finger5joint3: [ 0., 0., 0. ]
+   metacarpals: [ 0., 0., 0. ]
+   carpals: [ 0., 0., 0. ]
+   root: [ 0., 0., 0. ]

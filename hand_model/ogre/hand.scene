@@ -1,0 +1,64 @@
+<scene exported_by="marin" formatVersion="1.0.1" previous_export_time="1324589154.45567" export_time="1324594872.949296" >
+	<nodes >
+		<node name="Armature" >
+			<position y="0.485369" x="-1.201992" z="1.655065" />
+			<rotation qy="0.000000" qx="0.000000" qz="0.000000" qw="1.000000" />
+			<scale y="1.000000" x="1.000000" z="1.000000" />
+			<game >
+				<sensors />
+				<actuators />
+			</game>
+			<node name="hand_mesh" >
+				<position y="0.000000" x="0.000000" z="0.000000" />
+				<rotation qy="0.000000" qx="0.000000" qz="0.000000" qw="1.000000" />
+				<scale y="1.000000" x="1.000000" z="1.000000" />
+				<game >
+					<sensors />
+					<actuators />
+				</game>
+				<entity anisotropic_friction="False" lock_trans_y="False" damping_trans="0.03999999910593033" damping_rot="0.10000000149011612" inertia_tensor="0.4000000059604645" actor="False" velocity_min="0.0" lock_trans_z="False" physics_type="STATIC" lock_trans_x="False" meshFile="hand.mesh" friction_y="1.0" friction_x="1.0" friction_z="1.0" velocity_max="0.0" ghost="False" name="hand" mass_radius="1.0" mass="1.0" lock_rot_x="False" lock_rot_y="False" lock_rot_z="False" />
+			</node>
+		</node>
+		<node name="Lamp" >
+			<position y="2.758163" x="-3.286562" z="5.903862" />
+			<rotation qy="0.272171" qx="0.169076" qz="0.755880" qw="0.570947" />
+			<scale y="1.000000" x="1.000000" z="1.000000" />
+			<game >
+				<sensors />
+				<actuators />
+			</game>
+			<light shadow="true" type="point" name="Lamp" powerScale="1.0" >
+				<position y="2.758163" x="-3.286562" z="5.903862" />
+				<lightAttenuation range="5000" quadratic="0.0" constant="1.0" linear="0.03333335240683057" />
+				<colourDiffuse r="1.0" b="1.0" g="1.0" />
+				<colourSpecular r="1.0" b="1.0" g="1.0" />
+				<colourShadow r="1.0" b="1.0" g="1.0" />
+			</light>
+		</node>
+		<node name="Camera" >
+			<position y="5.108347" x="-8.683823" z="6.352241" />
+			<rotation qy="-0.466934" qx="0.243618" qz="-0.758356" qw="0.384082" />
+			<scale y="1.000000" x="1.000000" z="1.000000" />
+			<game >
+				<sensors />
+				<actuators />
+			</game>
+			<camera projectionType="perspective" fov="28.841546255021967" name="Camera" >
+				<clipping nearPlaneDist="0.10000000149011612" farPlaneDist="100.0" />
+			</camera>
+		</node>
+	</nodes>
+	<externals >
+		<item type="material" >
+			<file name="skin.material" />
+		</item>
+		<item type="material" >
+			<file name="blackness.material" />
+		</item>
+	</externals>
+	<environment >
+		<colourBackground r="0.05087608844041824" b="0.05087608844041824" g="0.05087608844041824" />
+		<colourAmbient r="0.0" b="0.0" g="0.0" />
+		<colourDiffuse r="0.05087608844041824" b="0.05087608844041824" g="0.05087608844041824" />
+	</environment>
+</scene>

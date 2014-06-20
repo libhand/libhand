@@ -1,0 +1,7 @@
+CMAKE_MINIMUM_REQUIRED (VERSION 2.8.6)
+
+include("${CMAKE_CURRENT_LIST_DIR}/LibHand-export.cmake")
+
+SET(LibHand_FOUND TRUE)
+SET(LibHand_INCLUDE_DIRS @LibHand_INCLUDE_DIRS@)
+SET(LibHand_LIBRARIES @LibHand_EXTRA_LIBS@ hand_hog hand_renderer hand_utils)
