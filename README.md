@@ -4,16 +4,7 @@ All rights reserved.
 
 http://www.libhand.org/  -- the most up-to-date information on LibHand.
 
-Contents:
-(1) About LibHand
-(2) Installing
-(3) What's contained in this distribution?
-(4) Citation
-(5) The Software License
-(6) The Hand 3D Model License
-
-----------------------------------------
-   (1) About LibHand
+About LibHand
 ----------------------------------------
 
 LibHand is an open-source permissively licensed portable library for
@@ -46,14 +37,12 @@ Blender and OGRE formats under a very permissive license (see (6)).
 The LibHand was inspired by concepts from recent research in human hand to
 robot grasping, for example:
 
-----------------------------------------
-   (2) Installing
+Installing
 ----------------------------------------
 
 Please see the INSTALL.txt file for directions
 
-----------------------------------------
-   (3) What's contained in this distribution?
+What's contained in this distribution?
 ----------------------------------------
 
 The file INSTALL.txt contains instructions on how to compile and set up
@@ -87,14 +76,13 @@ with different hand poses.
 - install_help - contains some utilities to make installing the LibHand
   dependecies easier.
 
-----------------------------------------
-   (4) Citation
+Citation
 ----------------------------------------
 
   * If this software or its derivative is used to produce an academic
 publication, you are required to cite this work by using the following
 citation or an alternate form provided on "http://www.libhand.org/" :
-
+```
     @misc{libhand,
       author = "Marin \v{S}ari\'{c}",
       title = "LibHand: A Library for Hand Articulation",
@@ -102,9 +90,9 @@ citation or an alternate form provided on "http://www.libhand.org/" :
       url = "http://www.libhand.org/",
       note = "Version 0.9"
     }
+```
 
-----------------------------------------
-   (5) License
+License
 ----------------------------------------
 
 LibHand is available under a derivative of a BSD-license that requires the
@@ -114,8 +102,7 @@ software in academic and non-academic, commercial and non-commercial,
 open-source and closed-source settings, but you have to give proper
 credit. Please see the license.txt file for the exact licensing information.
 
-----------------------------------------
-   (6) The Hand 3D Model License
+The Hand 3D Model License
 ----------------------------------------
 
 LibHand comes with a textured, rigged and skinned realistic model of a human
@@ -126,7 +113,6 @@ Please see the hand_model_license.txt file in the hand_model directory for
 the exact licensing information.
 
 
-====
 Copyright (c) 2011, Marin Saric <marin.saric@gmail.com>
 All rights reserved.
 
