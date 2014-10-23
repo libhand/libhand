@@ -1,5 +1,0 @@
-project-name LibHand
-project-type cmake
-lang cxx03
-namespace libhand
-run /Users/marin/src/libhand/hand_cpp/build/source/pose_designer
