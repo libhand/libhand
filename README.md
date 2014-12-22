@@ -6,6 +6,7 @@
 <a href="docs/images/pointing_large.png"><img height=200 width=200 src="docs/images/pointing_large.png"></a>
 <a href="docs/images/stop_it_large.png"><img height=200 width=200 src="docs/images/stop_it_large.png"></a>
 <a href="docs/images/rock_on_large.png"><img height=200 width=200 src="docs/images/rock_on_large.png"></a>
+<a href="docs/images/fist_large.png"><img height=200 width=200 src="docs/images/fist_large.png"></a>
 
 ## About LibHand
 

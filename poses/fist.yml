@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<rotation>
+  -9.9026805162429810e-01 -8.6571979807104071e-08
+  -1.3917310535907745e-01 1.3891351222991943e-01 -6.1048496514558792e-02
+  -9.8842102289199829e-01 -8.4962230175733566e-03
+  -9.9813479185104370e-01 6.0454387217760086e-02</rotation>
+<hand_joints>
+  <finger1joint1>
+    -6.5449845790863037e-01 0. 0.</finger1joint1>
+  <finger1joint2>
+    -1.6580628156661987e+00 0. 0.</finger1joint2>
+  <finger1joint3>
+    0. 0. 0.</finger1joint3>
+  <finger2joint1>
+    -4.7123891115188599e-01 0. 0.</finger2joint1>
+  <finger2joint2>
+    -1.8675023317337036e+00 0. 0.</finger2joint2>
+  <finger2joint3>
+    0. 0. 0.</finger2joint3>
+  <finger3joint1>
+    -6.3704520463943481e-01 0. 0.</finger3joint1>
+  <finger3joint2>
+    -1.6318829059600830e+00 0. 0.</finger3joint2>
+  <finger3joint3>
+    0. 0. 0.</finger3joint3>
+  <finger4joint1>
+    -5.4105210304260254e-01 0. 0.</finger4joint1>
+  <finger4joint2>
+    -1.7889624834060669e+00 0. 0.</finger4joint2>
+  <finger4joint3>
+    0. 0. 0.</finger4joint3>
+  <finger5joint1>
+    0. 0. 0.</finger5joint1>
+  <finger5joint2>
+    0. 0. 0.</finger5joint2>
+  <finger5joint3>
+    0. 0. 0.</finger5joint3>
+  <metacarpals>
+    0. 0. 0.</metacarpals>
+  <carpals>
+    0. 0. 0.</carpals>
+  <root>
+    0. 0. 0.</root></hand_joints>
+</opencv_storage>
