@@ -13,6 +13,7 @@
 #ifndef IMAGE_UTILS_H
 #define IMAGE_UTILS_H
 
+# include "hand_prereq.h"
 # include <vector>
 
 # include "opencv2/opencv.hpp"
@@ -24,7 +25,7 @@ using namespace std;
 typedef vector<cv::Point> Contour;
 typedef vector<Contour> Contours;
 
-class ImageUtils {
+class HAND_EXPORT ImageUtils {
  public:
 
   static cv::Mat Grayscale8Bit(const cv::Mat &image_in, bool clone=false);

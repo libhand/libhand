@@ -36,9 +36,11 @@
 // The FullHandPose class can be saved to arrays or STL containers of floats,
 // or written to and read from the human-readable YAML files.
 
+
 #ifndef HAND_POSE_H
 #define HAND_POSE_H
 
+# include "hand_prereq.h"
 # include <algorithm>
 # include <string>
 # include <vector>
@@ -81,7 +83,7 @@ cv::FileStorage& operator << (cv::FileStorage &store,
                               const HandJoint &handjoint);
 void operator >> (const cv::FileNode &store_node, HandJoint &handjoint);
 
-class FullHandPose {
+class HAND_EXPORT FullHandPose {
 public:
   FullHandPose(int num_joints = 15);
 
@@ -179,7 +181,7 @@ private:
   int JointOffset(int joint) const;
 
   int num_joints_;
-  vector<float> data_;
+  std::vector<float> data_;
 };
 
 inline int FullHandPose::num_joints() const {

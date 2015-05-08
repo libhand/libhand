@@ -20,7 +20,10 @@
 
 # include <stdexcept>
 # include <string>
-# include <unistd.h>
+#ifdef _MSC_VER
+#include <io.h>
+	#define mktemp _mktemp
+#endif
 
 namespace libhand {
 
@@ -87,7 +90,7 @@ string FileDialog::Save() {
 }
 
 string FileDialog::TkExec(const string &cmd) {
-  char tmpfile_pat[] = "/tmp/opendlg.XXXXXX";
+  char tmpfile_pat[] = "./opendlg.XXXXXX";
   string temp_base(mktemp(tmpfile_pat));
   string temp_cmd_fname(temp_base + ".cmd");
   string temp_out_fname(temp_base + ".out");
@@ -111,8 +114,8 @@ string FileDialog::TkExec(const string &cmd) {
   getline(out_file, out_string);
   out_file.close();
 
-  unlink(temp_cmd_fname.c_str());
-  unlink(temp_out_fname.c_str());
+  remove(temp_cmd_fname.c_str());
+  remove(temp_out_fname.c_str());
 
   return out_string;
 }

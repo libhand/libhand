@@ -16,5 +16,6 @@
 # include "opencv2/opencv.hpp"
 
 namespace libhand {
+	const float HogCell::kNoiseFloor = 1e-8;
 
 }  // namespace libhand

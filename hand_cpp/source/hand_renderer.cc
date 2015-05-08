@@ -32,6 +32,7 @@
 # include "OGRE/OgreTextureManager.h"
 # include "OGRE/OgreTexture.h"
 # include "OGRE/OgreHardwarePixelBuffer.h"
+# include "OGRE/Ogre.h"
 
 # include "OGRE/OgreEntity.h"
 # include "OGRE/OgreBone.h"
@@ -55,7 +56,6 @@
 namespace libhand {
 
 using namespace std;
-using namespace boost;
 using namespace Ogre;
 
 class HandRendererPrivate {
@@ -116,7 +116,7 @@ class HandRendererPrivate {
 
   const string scene_rsrc_name_;
 
-  shared_array<char> pixel_data_;
+  boost::shared_array<char> pixel_data_;
 #ifdef LOAD_OGRE_PLUGINS_STATICALLY
   boost::shared_ptr<GLPlugin> gl_plugin_;
   boost::shared_ptr<OctreePlugin> octree_plugin_;
@@ -136,7 +136,7 @@ class HandRendererPrivate {
   Viewport *viewport_;
   Entity *hand_entity_;
   Node *hand_node_;
-  Skeleton *hand_skeleton_;
+  SkeletonInstance *hand_skeleton_;
 
   float initial_cam_distance_;
   HandCameraSpec camera_spec_;
@@ -227,15 +227,21 @@ void HandRendererPrivate::Setup(int width, int height) {
   octree_plugin_.reset(new OctreePlugin);
 #endif
 
-  root_.reset(new Root("", "", "hand_renderer.log"));
+root_.reset(new Root("", "", "hand_renderer.log"));
 
 #ifdef LOAD_OGRE_PLUGINS_STATICALLY
   root_->installPlugin(gl_plugin_.get());
   root_->installPlugin(octree_plugin_.get());
 #else
-  root_->loadPlugin("RenderSystem_GL");
   root_->loadPlugin("Plugin_OctreeZone");
   root_->loadPlugin("Plugin_PCZSceneManager");
+  #ifdef WIN32
+    //FIXME: Windows build currently only supports Release build (Debug needs _d appended to the strings) 
+    root_->loadPlugin("RenderSystem_Direct3D9");
+  #else
+    root_->loadPlugin("RenderSystem_GL");
+  #endif
+  root_->loadPlugin("Plugin_OctreeSceneManager");
 #endif
 
   RenderSystemList render_systems = root_->getAvailableRenderers();

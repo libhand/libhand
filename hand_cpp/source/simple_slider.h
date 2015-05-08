@@ -12,7 +12,7 @@
 
 #ifndef SIMPLE_SLIDER_H
 #define SIMPLE_SLIDER_H
-
+# include "hand_prereq.h"
 # include <string>
 
 namespace libhand {
@@ -28,7 +28,7 @@ public:
   virtual void RefreshMe(SimpleSlider *slider) {}
 };
 
-class SimpleSlider {
+class HAND_EXPORT SimpleSlider {
  public:
   static const int kDefaultRawMaxVal = 100;
 

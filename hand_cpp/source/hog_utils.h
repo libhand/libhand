@@ -12,15 +12,16 @@
 
 #ifndef HOG_UTILS_H
 #define HOG_UTILS_H
-
+# include "hand_prereq.h"
 # include "opencv2/opencv.hpp"
+
 
 # include "hog_descriptor.h"
 
 namespace libhand {
 
 using namespace std;
-class HogUtils {
+class HAND_EXPORT HogUtils {
  public:
   static void RenderHog(const HogDescriptor &hog_desc,
                         cv::Mat &out_image);

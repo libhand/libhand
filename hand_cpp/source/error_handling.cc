@@ -13,6 +13,7 @@
 # include "error_handling.h"
 
 # include <iostream>
+# include <string>
 
 namespace libhand {
 

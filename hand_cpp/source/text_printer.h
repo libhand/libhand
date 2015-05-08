@@ -10,17 +10,25 @@
 
 // TextPrinter
 
+
 #ifndef TEXT_PRINTER_H
 #define TEXT_PRINTER_H
+
+#include "hand_prereq.h"
 
 # include <string>
 
 # include "opencv2/opencv.hpp"
 
+//Ignore __attribute() for MSVC
+#ifdef _MSC_VER
+#define __attribute__(x)
+#endif
+
 namespace libhand {
 
 using namespace std;
-class TextPrinter {
+class HAND_EXPORT TextPrinter {
  public:
   TextPrinter(const cv::Mat &display, int pos_x = 0, int pos_y = 0);
 

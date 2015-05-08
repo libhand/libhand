@@ -27,18 +27,20 @@
 #ifndef FILE_DIALOG_H
 #define FILE_DIALOG_H
 
+#include "hand_prereq.h"
+
 namespace libhand {
 
 using namespace std;
 
-struct FileExtension {
+struct HAND_EXPORT FileExtension {
   string description;
   vector<string> patterns;
 
   FileExtension(const char *desc, int num_ext, ...);
 };
 
-class FileDialog {
+class HAND_EXPORT FileDialog {
  public:
   FileDialog();
   string Open();

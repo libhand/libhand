@@ -12,7 +12,7 @@
 // ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 // OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-# include <libgen.h>
+# include <boost/filesystem.hpp>
 # include <string.h>
 # include <string>
 # include "file_tools.h"
@@ -20,11 +20,7 @@
 namespace libhand {
 
 string FileTools::Basename(const string &full_filepath) {
-  int size = full_filepath.size();
-  char full_filepath_copy[size + 1];
-  strncpy(full_filepath_copy, full_filepath.c_str(), size + 1);
-
-  return string(basename(full_filepath_copy));
+  return string(boost::filesystem::basename(full_filepath));
 }
 
 string FileTools::Basename(const char *full_filepath) {
@@ -32,11 +28,9 @@ string FileTools::Basename(const char *full_filepath) {
 }
 
 string FileTools::Dirname(const string &full_filepath) {
-  int size = full_filepath.size();
-  char full_filepath_copy[size + 1];
-  strncpy(full_filepath_copy, full_filepath.c_str(), size + 1);
-
-  return string(dirname(full_filepath_copy));
+	boost::filesystem::path path(full_filepath);
+  
+  return string(path.parent_path().string());
 }
 
 string FileTools::Dirname(const char *full_filepath) {

@@ -25,6 +25,7 @@
 #ifndef HOG_DESCRIPTOR_H
 #define HOG_DESCRIPTOR_H
 
+# include "hand_prereq.h"
 # include <cstring>
 # include <vector>
 
@@ -34,7 +35,7 @@ namespace libhand {
 
 using namespace std;
 
-class HogDescriptor {
+class HAND_EXPORT HogDescriptor {
  public:
   // Common HoG descriptor constructor
   // By default, HogDescriptor stores all the data inside the class.
