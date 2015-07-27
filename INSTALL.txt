@@ -10,7 +10,8 @@ http://www.libhand.org/ -- the most up-to-date information on LibHand.
 Contents:
 (1) General Install Notes
 (2) Installing Dependencies on MacOS X
-  (2.1) MATLAB precautions for MacOS X
+  (2.1) Alternate dependencies installation using homebrew
+  (2.2) MATLAB precautions for MacOS X
 (3) Installing Dependencies on Ubuntu Linux
   (3.1) Installing a brand new OpenCV on Ubuntu Linux
   (3.2) Installing CMake 2.8.6. on Linux
@@ -83,7 +84,33 @@ of Tk:
   sudo port install tk
 
 ----------------------------------------
-   (2.1) MATLAB precautions for MacOS X
+   (2.1) Alternate dependencies installation using homebrew
+----------------------------------------
+
+Alternatively, you can use homebrew to install the needed dependencies. First,
+you need to tap additional sources (including a version of ogre that has been
+patched to be compatible with lib hand):
+
+  brew tap homebrew/science
+  brew tap osrf/simulation
+  brew tap jonkeane/libhand
+
+Then, install the dependencies with:
+
+  brew install boost opencv jonkeane/libhand/ogre
+
+
+Then, you need to adjust the make paths to use the homebrew libraries, but replacing lines 4 and 5 in hand_cpp/source/CMakeLists.txt: with
+
+  LIST(APPEND CMAKE_PREFIX_PATH "/usr/local")
+  LIST(APPEND CMAKE_MODULE_PATH "/usr/local/Cellar/ogre/1.7.4/CMake")
+
+Finally, to build lib hand, follow the instructions in section 4 below.
+
+
+
+----------------------------------------
+   (2.2) MATLAB precautions for MacOS X
 ----------------------------------------
 
 MacOS X 10.7 arrived with a completely new compiler system enabled by
