@@ -117,8 +117,10 @@ class HandRendererPrivate {
   const string scene_rsrc_name_;
 
   shared_array<char> pixel_data_;
+#ifdef LOAD_OGRE_PLUGINS_STATICALLY
   boost::shared_ptr<GLPlugin> gl_plugin_;
   boost::shared_ptr<OctreePlugin> octree_plugin_;
+#endif
   boost::shared_ptr<Root> root_;
 
   SceneSpec scene_spec_;
@@ -194,8 +196,10 @@ HandRendererPrivate::HandRendererPrivate() :
   render_tex_rsrc_name_("HandRenderer RenderTexture Resources"),
   render_tex_name_("HandRenderer RenderTexture"),
   scene_rsrc_name_("HandRenderer Scene Resources"),
+#ifdef LOAD_OGRE_PLUGINS_STATICALLY
   gl_plugin_(new GLPlugin),
   octree_plugin_(new OctreePlugin),
+#endif
   scene_mgr_(NULL),
   resource_mgr_(NULL),
   render_target_(NULL),
@@ -218,13 +222,21 @@ void HandRendererPrivate::Setup(int width, int height) {
     return;
   }
 
+#ifdef LOAD_OGRE_PLUGINS_STATICALLY
   gl_plugin_.reset(new GLPlugin);
   octree_plugin_.reset(new OctreePlugin);
+#endif
 
   root_.reset(new Root("", "", "hand_renderer.log"));
 
+#ifdef LOAD_OGRE_PLUGINS_STATICALLY
   root_->installPlugin(gl_plugin_.get());
   root_->installPlugin(octree_plugin_.get());
+#else
+  root_->loadPlugin("RenderSystem_GL");
+  root_->loadPlugin("Plugin_OctreeZone");
+  root_->loadPlugin("Plugin_PCZSceneManager");
+#endif
 
   RenderSystemList render_systems = root_->getAvailableRenderers();
   if (!render_systems.size()) {

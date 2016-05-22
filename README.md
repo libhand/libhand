@@ -18,8 +18,8 @@ LibHand is available at <http://www.libhand.org/>
 Feel free to contact LibHand's author Marin Saric at: marin.saric@gmail.com
 
 LibHand is implemented in C++ and offers a MATLAB interface to facilitate
-experimentation. LibHand is currently actively supported for MacOS X and
-Ubuntu Linux on 64-bit x86 processors.
+experimentation. LibHand is currently actively supported for MacOS X on 64-bit
+x86 processors and Debian/Ubuntu Linux on 32-bit x86, 64-bit x86 and armhf processors.
 
 By leveraging OGRE, a modern 3D engine, LibHand can render, deform and
 analyze a realistic 70k+ triangle hand model at high framerates on mid-range
@@ -40,7 +40,48 @@ robot grasping, for example:
 Installing
 ----------------------------------------
 
-Please see the INSTALL.txt file for directions
+### Software dependencies
+LibHand 0.9 was developed against following dependencies
+- [OpenCV](https://en.wikipedia.org/wiki/OpenCV) (Open Source Computer Vision) v2.3.y
+- [OGRE](https://en.wikipedia.org/wiki/OGRE) (Object Orientated Graphics Rendering Engine) v1.7.4
+	- OpenGL headers (GL/glu.h)
+- [Tcl/Tk](https://en.wikipedia.org/wiki/Tcl) (likely v8.5.y)
+- [CMake](https://en.wikipedia.org/wiki/CMake) v2.8.6
+
+Please see the (deprecated) INSTALL.txt file for the old, out-of-date static
+compilaton instructions for Ubuntu 11.10, MacOS X Mavericks (via MacPorts
+and Homebrew) and Matlab bindings.
+
+#### Satisfying software dependencies under Debian/Ubuntu
+The following instructions allow compilation of libhand without too much trouble on all supported versions on Debian/Ubuntu, and has been tested on 32-bit versions of Ubuntu 12.04 (Precise), Ubuntu 14.04 (Trusty), Ubuntu 16.04 (Xenial), Debian 7 (Wheezy) and 32-bit, 64-bit and armhf versions of Debian 8 (Jessie).
+
+```bash
+sudo apt-get install build-essential cmake git libogre-dev libglu1-mesa-dev libxt-dev libopencv-dev tcl tk
+```
+On Ubuntu 16.04, substitute libogre-dev with libogre-1.9-dev.
+
+### Compiling libhand and pose_designer
+```bash
+git clone https://github.com/jonkeane/libhand
+mkdir build
+cd build
+cmake ..
+make
+# Collate libhand build artifacts into local "dist" directory (for external applications to link against)
+make install
+```
+### Usage
+Unfortunately, the OGRE package in the Debian and Ubuntu repositories does not appear to configure its own runtime linking paths correctly, so we have to supply the path manually. On a 64-bit Ubuntu 16.04 system linux system for example, before running libhand you may need to run:
+```bash
+# Ensure path exists first: on 32-bit, x86_64 is replaced with i386. Replace OGRE version with whatever was installed (likely OGRE-1.9.0, OGRE-1.8.0, or OGRE-1.7.4).
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/OGRE-1.9.0
+sudo ldconfig
+```
+Once the OGRE library path is configured, you can launch the graphical pose designer from the build directory:
+```
+./hand_cpp/source/pose_designer
+```
+...and then use the file dialog box to open hand_model/scene_spec.yml to design hand poses! From the Pose Designer you can use press 'r' to open another dialog box to load some pre-defined hand pose (located in poses/*.yml). Toggle the help popup by pressing 'h'.
 
 What's contained in this distribution?
 ----------------------------------------
