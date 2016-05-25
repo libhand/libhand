@@ -122,9 +122,6 @@ with different hand poses.
 - poses - contains some example hand poses as YAML files, to be used with
   the pose_designer and the example code for both C++ and MATLAB.
 
-- install_help - contains some utilities to make installing the LibHand
-  dependecies easier.
-
 Citation
 ----------------------------------------
 

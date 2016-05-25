@@ -131,9 +131,6 @@ sudo apt-get install doxygen libxaw7-dev libxrandr-dev tcl tk \
      libboost-thread-dev libboost-date-time-dev \
      libjpeg-dev libtiff4-dev libbz2-dev subversion 
 
-There is a utility script for a smoother installation of OGRE v1.7.3.
-You can find it inside the install_help directory.
-
 The OpenCV library is available through apt-get. A static version of OpenCV
 is not required under Ubuntu Linux.
 
