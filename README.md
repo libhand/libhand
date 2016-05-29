@@ -1,3 +1,11 @@
+# LibHand
+
+<a href="http://www.libhand.org/images/hand1_large.png"><img src="http://www.libhand.org/images/hand1_small.png"></a>
+<a href="http://www.libhand.org/images/hand2_large.png"><img src="http://www.libhand.org/images/hand2_small.png"></a>
+<a href="http://www.libhand.org/images/hand3_large.png"><img src="http://www.libhand.org/images/hand3_small.png"></a>
+<a href="http://www.libhand.org/images/hand4_large.png"><img src="http://www.libhand.org/images/hand4_small.png"></a>
+<a href="http://www.libhand.org/images/hand5_large.png"><img src="http://www.libhand.org/images/hand5_small.png"></a>
+
 LibHand v0.9
 Copyright (c) 2011, Marin Saric <marin.saric@gmail.com>
 All rights reserved.
@@ -152,7 +160,6 @@ it's available under the Creative Commons Attribution 3.0 Unported License.
 
 Please see the hand_model_license.txt file in the hand_model directory for
 the exact licensing information.
-
 
 Copyright (c) 2011, Marin Saric <marin.saric@gmail.com>
 All rights reserved.
