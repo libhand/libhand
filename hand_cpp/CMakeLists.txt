@@ -6,4 +6,4 @@ SET(HAND_LIB_DIST_DIR "${CMAKE_SOURCE_DIR}/dist")
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/modules)
 
-SUBDIRS(source third_party)
+SUBDIRS(source)
