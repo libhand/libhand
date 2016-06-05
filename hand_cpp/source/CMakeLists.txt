@@ -11,7 +11,7 @@ ELSEIF(UNIX)
     LIST(APPEND CMAKE_MODULE_PATH "/usr/share/OGRE/cmake/modules")
     LIST(APPEND LibHand_EXTRA_LIBS "-ldl -lXt -lboost_system")
     ADD_DEFINITIONS(-fPIC)
-ENDIF(UNIX)
+ENDIF()
 
 
 ADD_DEFINITIONS(-O3)
