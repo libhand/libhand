@@ -1,10 +1,9 @@
 # LibHand
-
-<a href="http://www.libhand.org/images/hand1_large.png"><img src="http://www.libhand.org/images/hand1_small.png"></a>
-<a href="http://www.libhand.org/images/hand2_large.png"><img src="http://www.libhand.org/images/hand2_small.png"></a>
-<a href="http://www.libhand.org/images/hand3_large.png"><img src="http://www.libhand.org/images/hand3_small.png"></a>
-<a href="http://www.libhand.org/images/hand4_large.png"><img src="http://www.libhand.org/images/hand4_small.png"></a>
-<a href="http://www.libhand.org/images/hand5_large.png"><img src="http://www.libhand.org/images/hand5_small.png"></a>
+<a href="docs/images/relaxed_large.png"><img height=200 width=200 src="docs/images/relaxed_large.png"></a>
+<a href="docs/images/a_ok_large.png"><img height=200 width=200 src="docs/images/a_ok_large.png"></a>
+<a href="docs/images/pointing_large.png"><img height=200 width=200 src="docs/images/pointing_large.png"></a>
+<a href="docs/images/stop_it_large.png"><img height=200 width=200 src="docs/images/stop_it_large.png"></a>
+<a href="docs/images/rock_on_large.png"><img height=200 width=200 src="docs/images/rock_on_large.png"></a>
 
 ## About LibHand
 
