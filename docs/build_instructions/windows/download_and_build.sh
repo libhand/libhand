@@ -25,7 +25,14 @@ TARGET_DEPENDENCY_DIR="third_party"
 BOOST_SRC=boost_1_58_0
 TARGET_BUILD_DIR=build
 
-CMAKE_BINARY="cmake.exe"
+# Set AppVeyor specific paths
+if [ -n "${APPVEYOR+x}" ]; then
+	# AppVeyor has correctly configured PATH
+	CMAKE_BINARY="cmake.exe"
+else
+	# Chocolatey's cmake does not update PATH
+	CMAKE_BINARY="/c/Program\ Files/CMake/bin/cmake.exe"
+fi
 
 function usage {
 	echo " Helper script to build LibHand on Windows"

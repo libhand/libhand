@@ -20,8 +20,8 @@ ENDIF()
 IF(WIN32)
   # Remember to always use forward slashes in CMake, even for Windows paths,
   # as backslash followed by a character is interpreted as escape sequences.
-  # We use both locations Chocolatey package manager installed into, and
-  # relative paths for the dependencies that need to be compiled from source.
+  # We use both locations. One is where Boost was compiled from source, the other is where
+  # Chocolatey package manager installed Boost into.
 
   SET(BOOST_LOCALLY_INSTALLED_DIRECTORY "${PROJECT_SOURCE_DIR}/third_party/boost_1_58_0/")
   IF(EXISTS ${BOOST_LOCALLY_INSTALLED_DIRECTORY}) 

@@ -1,6 +1,5 @@
-[![Build Status](https://travis-ci.org/shasheene/libhand-experimental.svg?branch=continuous_integration_testing)](https://travis-ci.org/shasheene/libhand-experimental)
+# LibHand [![Build Status](https://travis-ci.org/shasheene/libhand-experimental.svg?branch=continuous_integration_testing)](https://travis-ci.org/shasheene/libhand-experimental) [![Build status](https://ci.appveyor.com/api/projects/status/0o29nwx1h280xb9t?svg=true&passingText=Windows%20Build%3A%20passing&failingText=Windows%20Build%3A%20failing&pendingText=Windows%20Build%3A%20pending)](https://ci.appveyor.com/project/shasheene/libhand-experimental)
 
-# LibHand
 <a href="docs/images/relaxed_large.png"><img height=200 width=200 src="docs/images/relaxed_large.png"></a>
 <a href="docs/images/a_ok_large.png"><img height=200 width=200 src="docs/images/a_ok_large.png"></a>
 <a href="docs/images/pointing_large.png"><img height=200 width=200 src="docs/images/pointing_large.png"></a>
@@ -9,7 +8,6 @@
 <a href="docs/images/fist_large.png"><img height=200 width=200 src="docs/images/fist_large.png"></a>
 <a href="docs/images/vulcan_salute.png"><img height=200 width=200 src="docs/images/vulcan_salute.png"></a>
 <a href="docs/images/thumbs_up.png"><img height=200 width=200 src="docs/images/thumbs_up.png"></a>
-
 
 ## About LibHand
 
