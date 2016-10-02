@@ -71,40 +71,10 @@ LibHand v0.9.0 was released by Marin Saric in 2011 after being developed against
 LibHand v0.9.z is currently developed against the highest common dependency version that is easily accessible on the supported platforms. Building against newer dependency versions may work fine, of course. 
 
 ### Building LibHand
+- See [Building LibHand on Debian/Ubuntu (and derivatives)](docs/build_instructions/debian/BUILD.DEBIAN.md)
 - See [Building LibHand on Windows](docs/build_instructions/windows/BUILD.WINDOWS.md)
 
-#### Satisfying software dependencies under Debian/Ubuntu
-The following instructions allow compilation of libhand without too much trouble on all supported versions on Debian/Ubuntu, and has been tested on 32-bit versions of Ubuntu 12.04 (Precise), Ubuntu 14.04 (Trusty), Ubuntu 16.04 (Xenial), Debian 7 (Wheezy) and 32-bit, 64-bit and armhf versions of Debian 8 (Jessie).
-
-```bash
-sudo apt-get install build-essential cmake git libogre-dev libglu1-mesa-dev libxt-dev libopencv-dev tcl tk
-```
-On Ubuntu 16.04, substitute libogre-dev with libogre-1.9-dev.
-
-### Compiling libhand and pose_designer
-```bash
-git clone https://github.com/jonkeane/libhand
-mkdir build
-cd build
-cmake ..
-make
-# Collate libhand build artifacts into local "dist" directory (for external applications to link against)
-make install
-```
-### Usage
-Unfortunately, the OGRE package in the Debian and Ubuntu repositories does not configure its own runtime linking search paths. Instead, we supply the path manually and update the loader. On a 64-bit Ubuntu 16.04 system linux system for example, before running libhand you may need to run:
-```bash
-# Ensure path exists first: on 32-bit, x86_64 is replaced with i386. Replace OGRE version with whatever was installed (likely OGRE-1.9.0, OGRE-1.8.0, or OGRE-1.7.4).
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/OGRE-1.9.0
-sudo ldconfig
-```
-Once the OGRE library path is configured, you can launch the graphical pose designer from the build directory:
-```
-./hand_cpp/source/pose_designer
-```
-...and then use the file dialog box to open hand_model/scene_spec.yml to design hand poses! From the Pose Designer you can use press 'r' to open another dialog box to load some pre-defined hand pose (located in poses/*.yml). Toggle the help popup by pressing 'h'.
-
-## What's contained in this distribution?
+# What's contained in this distribution?
 
 Here is a general overview of the LibHand directory structure.
 
