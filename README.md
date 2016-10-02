@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/shasheene/libhand-experimental.svg?branch=continuous_integration_testing)](https://travis-ci.org/shasheene/libhand-experimental)
+
 # LibHand
 <a href="docs/images/relaxed_large.png"><img height=200 width=200 src="docs/images/relaxed_large.png"></a>
 <a href="docs/images/a_ok_large.png"><img height=200 width=200 src="docs/images/a_ok_large.png"></a>
