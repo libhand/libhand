@@ -7,6 +7,9 @@
 <a href="docs/images/stop_it_large.png"><img height=200 width=200 src="docs/images/stop_it_large.png"></a>
 <a href="docs/images/rock_on_large.png"><img height=200 width=200 src="docs/images/rock_on_large.png"></a>
 <a href="docs/images/fist_large.png"><img height=200 width=200 src="docs/images/fist_large.png"></a>
+<a href="docs/images/vulcan_salute.png"><img height=200 width=200 src="docs/images/vulcan_salute.png"></a>
+<a href="docs/images/thumbs_up.png"><img height=200 width=200 src="docs/images/thumbs_up.png"></a>
+
 
 ## About LibHand
 
