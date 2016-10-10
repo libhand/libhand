@@ -20,4 +20,7 @@ ADD_EXECUTABLE(render_hog_descriptor render_hog_descriptor.cc)
 TARGET_LINK_LIBRARIES(render_hog_descriptor ${LibHand_LIBRARIES} ${OpenCV_LIBS})
 
 ADD_EXECUTABLE(file_dialog_test file_dialog_test.cc)
-TARGET_LINK_LIBRARIES(file_dialog_test hand_utils) 
+TARGET_LINK_LIBRARIES(file_dialog_test hand_utils)
+
+ADD_EXECUTABLE(ogre_rendering_test ogre_rendering_test.cc)
+TARGET_LINK_LIBRARIES(ogre_rendering_test ${LibHand_LIBRARIES})

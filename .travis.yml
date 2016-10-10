@@ -107,3 +107,9 @@ script:
   - make
   - popd
   - popd
+    # Setup runtime link paths (see BUILD.DEBIAN.md)
+  - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${OGRE_HOME}
+  - sudo ldconfig
+    # Run LibHand integration test
+  - ./examples/build/ogre_rendering_test .
+

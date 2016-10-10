@@ -42,5 +42,7 @@ build_script:
     # from Chocolatey, and also dependencies that must be compiled from source). After the dependencies
     # it compiles LibHand.
   - cmd: bash -x -c ./docs/build_instructions/windows/download_and_build.sh
+  - cmd: examples\build\Release\ogre_rendering_test.exe .
   - cmd: bash -x -c ./docs/build_instructions/windows/download_and_build.sh --build-ogre-mode
+  - cmd: examples\build\Release\ogre_rendering_test.exe .
 
