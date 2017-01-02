@@ -13,16 +13,18 @@
 #ifndef ERROR_HANDLING_H
 #define ERROR_HANDLING_H
 
+
 #include <iostream>
+#include "hand_prereq.h"
 
 namespace libhand {
 
 using namespace std;
 
-void Warning(const string &str);
-void Warning(const char *str);
-void Error(const string &str);
-void Error(const char *str);
+void HAND_EXPORT Warning(const string &str);
+void HAND_EXPORT Warning(const char *str);
+void HAND_EXPORT Error(const string &str);
+void HAND_EXPORT Error(const char *str);
 
 }  // namespace libhand
 #endif  // ERROR_HANDLING_H

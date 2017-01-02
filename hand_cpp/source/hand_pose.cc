@@ -11,7 +11,8 @@
 // HandPose
 
 # include "hand_pose.h"
-
+#include <boost/system/config.hpp>
+#define BOOST_LIB_DIAGNOSTIC
 # include <algorithm>
 # include <stdexcept>
 # include <iostream>

@@ -22,6 +22,7 @@
 #ifndef HAND_CAMERA_SPEC_H
 #define HAND_CAMERA_SPEC_H
 
+# include "hand_prereq.h"
 namespace Ogre {
 class Vector3;
 class Matrix3;
@@ -34,7 +35,8 @@ using namespace std;
 
 class FullHandPose;
 
-struct HandCameraSpec {
+class HAND_EXPORT HandCameraSpec {
+public:
   // The distance from the center of the hand
   float r;
   // theta and phi are the angles along the sphere centered on the hand

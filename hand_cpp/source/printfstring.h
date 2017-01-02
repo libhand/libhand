@@ -12,15 +12,20 @@
 #define __PRINTFSTRING_H__
 
 #include <string>
+#include "hand_prereq.h"
 
 #define PRINTFSTRING_MAX 4096
+//Ignore __attribute() for MSVC
+#ifdef _MSC_VER
+	#define __attribute__(x)
+#endif
 
 namespace libhand {
 
 using namespace std;
 
 // Use PrintFString to print to a C++ string just like with printf()
-string PrintFString(const char *format, ...)
+string HAND_EXPORT PrintFString(const char *format, ...)
   __attribute__ ((format (printf, 1, 2)));
 
 };

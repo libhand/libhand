@@ -1,0 +1,48 @@
+# AppVeyor Continuous Integration configuration file
+# Reference: https://www.appveyor.com/docs/build-configuration
+#
+# The configuration uses two approaches discussed in BUILD.WINDOWS.md 
+#
+# Given the AppVeyor package environment https://www.appveyor.com/docs/installed-software/
+# We have pre-installed VS2013, CMake, Git for Windows (which includes UNIX tools like Bash).
+# Also has Boost, but unlikely built with the flags LibHand required to be compatible
+# with LibHand dependencies happen to require (due to third-party dependencies, OGRE).
+# ActiveTCL is available in Chocolatey, but not required as GUI is not exercised by tests.
+#
+# AppVeyor has a 1 hour time limit, which potentially could be reached depending on speed of
+# downloading third-party dependencies, and compiling heavy weight software such as Boost.
+
+# Preserve downloaded files (eg, executable library installers) between builds
+# (if '-> dependency' is unmodified since last build).
+# While caching speeds up build times (potentially significantly), developers need to be aware 
+# seperate builds are no longer memoryless -- the codepaths being tested are slightly different
+# because a file already exists etc. If not considered, this can lead to spurious successes
+# or failure that doesn't get reproduced when the build is re-triggered.
+cache:
+    # Preserving portable Chocolatey packages between builds
+  - C:\ProgramData\chocolatey\bin -> appveyor.yml
+  - C:\ProgramData\chocolatey\lib -> appveyor.yml
+    # Preserve the files the build script downloads
+  - download_cache -> docs/build_instructions/windows/download_and_build.sh
+ 
+install:
+    # --allow-empty-checksums is required on latest Chocolatey client when specifying old version
+  - cinst --force opencv -version 2.4.9.20140518 
+
+environment:
+  # Note, uses 32-bit OpenCV version as rest of build is 32-bit (see BUILD.WINDOWS.md)
+  OPENCV_DIR: "C:/OpenCV249/opencv/build/x86/vc12"
+
+build_script:
+  - cmd: set PATH=%PATH%;"%OPENCV_DIR%/bin"
+  - cmd: echo "PATH=%PATH%"
+
+    # Run the build script
+    # Note this script downloads other third-party dependencies (those whose binaries are unavailable
+    # from Chocolatey, and also dependencies that must be compiled from source). After the dependencies
+    # it compiles LibHand.
+  - cmd: bash -x -c ./docs/build_instructions/windows/download_and_build.sh
+  - cmd: examples\build\Release\ogre_rendering_test.exe .
+  - cmd: bash -x -c ./docs/build_instructions/windows/download_and_build.sh --build-ogre-mode
+  - cmd: examples\build\Release\ogre_rendering_test.exe .
+

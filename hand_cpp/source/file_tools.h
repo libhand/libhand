@@ -14,7 +14,7 @@
 
 #ifndef __FILE_TOOLS_H__
 #define __FILE_TOOLS_H__
-
+# include "hand_prereq.h"
 # include <string>
 
 namespace libhand {
@@ -22,7 +22,7 @@ namespace libhand {
 using namespace std;
 
 // FileTools provides utility routines for manipulating files
-class FileTools {
+class HAND_EXPORT FileTools {
 public:
   // Extracts the name of the file from the full path
   static string Basename(const char *full_filepath);

@@ -65,7 +65,7 @@ class HogCell {
   bool IsZero() const;
   int MaxElementIdx() const;
 
-  static const float kNoiseFloor = 1e-8;
+  static const float kNoiseFloor;
 
  private:
   float *bins_;

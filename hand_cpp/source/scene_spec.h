@@ -19,6 +19,7 @@
 #ifndef SCENE_SPEC_H
 #define SCENE_SPEC_H
 
+# include "hand_prereq.h"
 # include <string>
 # include <vector>
 
@@ -26,7 +27,7 @@ namespace libhand {
 
 using namespace std;
 
-class SceneSpec {
+class HAND_EXPORT SceneSpec {
  public:
   // Constructs a scene spec
   SceneSpec() : scene_spec_dir_(".") {}

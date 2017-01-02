@@ -9,10 +9,9 @@
 // <http://www.libhand.org/>
 
 // HogUtils
-
-# include "hog_utils.h"
-
+#define _USE_MATH_DEFINES
 # include <cmath>
+# include "hog_utils.h"
 
 # include "opencv2/opencv.hpp"
 

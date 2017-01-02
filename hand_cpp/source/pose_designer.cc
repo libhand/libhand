@@ -111,8 +111,8 @@ void PoseDesigner::Run() {
 SimpleSlider *PoseDesigner::MakeAngleSlider(const string &name,
                                             const string &win_name) {
   SimpleSlider *slider = new SimpleSlider(name, win_name,
-                                          -math::constants::pi<float>(),
-                                          math::constants::pi<float>(),
+                                          -boost::math::constants::pi<float>(),
+                                          boost::math::constants::pi<float>(),
                                           720,
                                           &update_slider_fn_);
   slider->set_val(0);
@@ -280,7 +280,7 @@ void PoseDesigner::DisplayJointAngle() {
     s = hand_pose_->side(n),
     t = hand_pose_->twist(n);
 
-  float pi = math::constants::pi<float>();
+  float pi = boost::math::constants::pi<float>();
   float deg_b = b * 180. / pi, deg_s = s * 180. / pi, deg_t = t * 180. / pi;
 
   TextPrinter printer_(display_, 10, kRenderWinHeight - 50);

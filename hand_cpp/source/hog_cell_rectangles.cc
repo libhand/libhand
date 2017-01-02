@@ -17,7 +17,7 @@
 
 namespace libhand {
 
-HogCellRectangles::HogCellRectangles() : 
+HogCellRectangles::HogCellRectangles() :
   num_rows_(0),
   num_cols_(0),
   image_rect_(0, 0, 0, 0) {

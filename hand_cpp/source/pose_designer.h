@@ -13,6 +13,7 @@
 #ifndef POSE_DESIGNER_H
 #define POSE_DESIGNER_H
 
+# include "hand_prereq.h"
 # include "boost/shared_ptr.hpp"
 # include "opencv2/opencv.hpp"
 
@@ -26,9 +27,9 @@
 namespace libhand {
 
 using namespace std;
-using namespace boost;
+//using namespace boost;
 
-class PoseDesigner {
+class HAND_EXPORT PoseDesigner {
  public:
   PoseDesigner();
 

@@ -12,7 +12,7 @@
 
 #ifndef IMAGE_TO_HOG_CALCULATOR_H
 #define IMAGE_TO_HOG_CALCULATOR_H
-
+# include "hand_prereq.h"
 # include <vector>
 
 # include "opencv2/opencv.hpp"
@@ -25,7 +25,7 @@ namespace libhand {
 
 using namespace std;
 
-class ImageToHogCalculator {
+class HAND_EXPORT ImageToHogCalculator {
  public:
   ImageToHogCalculator();
 

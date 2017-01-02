@@ -22,7 +22,7 @@
 
 #ifndef HAND_RENDERER_H
 #define HAND_RENDERER_H
-
+# include "hand_prereq.h"
 # include "opencv2/opencv.hpp"
 
 # include "hand_camera_spec.h"
@@ -35,7 +35,7 @@ using namespace std;
 
 class HandRendererPrivate;
 
-class HandRenderer {
+class HAND_EXPORT HandRenderer {
  public:
   // You should have one instance of HandRenderer class that lives as
   // long as you plan to render hands. There should not be multiple

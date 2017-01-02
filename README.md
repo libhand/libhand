@@ -1,101 +1,80 @@
-# LibHand
+# LibHand [![Build Status](https://travis-ci.org/shasheene/libhand-experimental.svg?branch=continuous_integration_testing)](https://travis-ci.org/shasheene/libhand-experimental) [![Build status](https://ci.appveyor.com/api/projects/status/0o29nwx1h280xb9t?svg=true&passingText=Windows%20Build%3A%20passing&failingText=Windows%20Build%3A%20failing&pendingText=Windows%20Build%3A%20pending)](https://ci.appveyor.com/project/shasheene/libhand-experimental)
 
-<a href="http://www.libhand.org/images/hand1_large.png"><img src="http://www.libhand.org/images/hand1_small.png"></a>
-<a href="http://www.libhand.org/images/hand2_large.png"><img src="http://www.libhand.org/images/hand2_small.png"></a>
-<a href="http://www.libhand.org/images/hand3_large.png"><img src="http://www.libhand.org/images/hand3_small.png"></a>
-<a href="http://www.libhand.org/images/hand4_large.png"><img src="http://www.libhand.org/images/hand4_small.png"></a>
-<a href="http://www.libhand.org/images/hand5_large.png"><img src="http://www.libhand.org/images/hand5_small.png"></a>
+<a href="docs/images/relaxed_large.png"><img height=200 width=200 src="docs/images/relaxed_large.png"></a>
+<a href="docs/images/a_ok_large.png"><img height=200 width=200 src="docs/images/a_ok_large.png"></a>
+<a href="docs/images/pointing_large.png"><img height=200 width=200 src="docs/images/pointing_large.png"></a>
+<a href="docs/images/stop_it_large.png"><img height=200 width=200 src="docs/images/stop_it_large.png"></a>
+<a href="docs/images/rock_on_large.png"><img height=200 width=200 src="docs/images/rock_on_large.png"></a>
+<a href="docs/images/fist_large.png"><img height=200 width=200 src="docs/images/fist_large.png"></a>
+<a href="docs/images/vulcan_salute.png"><img height=200 width=200 src="docs/images/vulcan_salute.png"></a>
+<a href="docs/images/thumbs_up.png"><img height=200 width=200 src="docs/images/thumbs_up.png"></a>
 
-LibHand v0.9
-Copyright (c) 2011, Marin Saric <marin.saric@gmail.com>
-All rights reserved.
-
-http://www.libhand.org/  -- the most up-to-date information on LibHand.
-
-About LibHand
-----------------------------------------
+## About LibHand
 
 LibHand is an open-source permissively licensed portable library for
-rendering and recognizing articulations of human hand. The goal of LibHand
-is to provide as simple programming interface as possible to manipulate
-human hand pose information, render a human hand and analyze the resulting
-image. Potential scientific applications include Computer Graphics, Computer
-Vision and Robotics.
+rendering articulations of human hand. The goal of LibHand is to provide
+as simple programming interface as possible to manipulate human hand pose
+information, render a human hand and analyze the resulting image.
+
+Potential scientific applications include computer graphics, computer
+vision, robotics, and research into human prosthethic devices. Potential
+educational and entertainment applications include integration in interactive
+virtual reality applications such as games.
 
 LibHand is available at <http://www.libhand.org/>
-Feel free to contact LibHand's author Marin Saric at: marin.saric@gmail.com
+Feel free to contact LibHand's author Marin Saric at: marin.saric@gmail.com,
+or the LibHand maintainer Shasheen Ediriweera at: shasheene@gmail.com
 
-LibHand is implemented in C++ and offers a MATLAB interface to facilitate
-experimentation. LibHand is currently actively supported for MacOS X on 64-bit
-x86 processors and Debian/Ubuntu Linux on 32-bit x86, 64-bit x86 and armhf processors.
-
+LibHand is implemented in C++ and offers an interface to facilitate
+experimentation. 
 By leveraging OGRE, a modern 3D engine, LibHand can render, deform and
 analyze a realistic 70k+ triangle hand model at high framerates on mid-range
 computer hardware.
 
 LibHand provides OpenCV-friendly interfaces to make it very easy for the
 Computer Vision and Robotics community to use it in their research. LibHand
-is designed to make it easier to reproduce and extend.the research in areas
+is designed to make it easier to reproduce and extend the research in areas
 such as hand grasping, hand pose recognition, hand gesture recognition,
 visual servoing, etc.
 
 Additionaly LibHand provides a realistic Human Hand 3D model available in
-Blender and OGRE formats under a very permissive license (see (6)).
+Blender and OGRE formats under a very permissive [license](#license).
 
 The LibHand was inspired by concepts from recent research in human hand to
-robot grasping, for example:
+robot grasping.
 
-Installing
-----------------------------------------
+## Installing
+
+### Supported platforms
+LibHand v0.9.z is currently actively developed and/or supported on
+- Debian Jessie x86_64 and armhf
+- Ubuntu 12.04/14.04/16.04 x86_64 systems.
+- Windows 7/8/10 x86_64
+
+Any Debian/Ubuntu derivative (such as Linux Mint) should of course work fine without any modifications to the instructions. See below for detailed instructions.
+
+Other POSIX operating systems, and Linux distributions, CPU architectures etc should work fine, assuming you can satifying the software dependencies.
+
+MacOS X support is currently unmaintained. LibHand v0.9.z's Matlab bindings are also unmaintained. Historical information can be found in the out-of-date and deprecated INSTALL.txt file. Matlab bindings may either updated or removed entirely in a subsequent LibHand release.
 
 ### Software dependencies
-LibHand 0.9 was developed against following dependencies
+LibHand v0.9.0 was released by Marin Saric in 2011 after being developed against following dependencies
 - [OpenCV](https://en.wikipedia.org/wiki/OpenCV) (Open Source Computer Vision) v2.3.y
 - [OGRE](https://en.wikipedia.org/wiki/OGRE) (Object Orientated Graphics Rendering Engine) v1.7.4
 	- OpenGL headers (GL/glu.h)
 - [Tcl/Tk](https://en.wikipedia.org/wiki/Tcl) (likely v8.5.y)
 - [CMake](https://en.wikipedia.org/wiki/CMake) v2.8.6
+- [Boost](http://www.boost.org/) (likely v1.46.y)
 
-Please see the (deprecated) INSTALL.txt file for the old, out-of-date static
-compilaton instructions for Ubuntu 11.10, MacOS X Mavericks (via MacPorts
-and Homebrew) and Matlab bindings.
+LibHand v0.9.z is currently developed against the highest common dependency version that is easily accessible on the supported platforms. Building against newer dependency versions may work fine, of course. 
 
-#### Satisfying software dependencies under Debian/Ubuntu
-The following instructions allow compilation of libhand without too much trouble on all supported versions on Debian/Ubuntu, and has been tested on 32-bit versions of Ubuntu 12.04 (Precise), Ubuntu 14.04 (Trusty), Ubuntu 16.04 (Xenial), Debian 7 (Wheezy) and 32-bit, 64-bit and armhf versions of Debian 8 (Jessie).
+### Building LibHand
+- See [Building LibHand on Debian/Ubuntu (and derivatives)](docs/build_instructions/debian/BUILD.DEBIAN.md)
+- See [Building LibHand on Windows](docs/build_instructions/windows/BUILD.WINDOWS.md)
 
-```bash
-sudo apt-get install build-essential cmake git libogre-dev libglu1-mesa-dev libxt-dev libopencv-dev tcl tk
-```
-On Ubuntu 16.04, substitute libogre-dev with libogre-1.9-dev.
+# What's contained in this distribution?
 
-### Compiling libhand and pose_designer
-```bash
-git clone https://github.com/jonkeane/libhand
-mkdir build
-cd build
-cmake ..
-make
-# Collate libhand build artifacts into local "dist" directory (for external applications to link against)
-make install
-```
-### Usage
-Unfortunately, the OGRE package in the Debian and Ubuntu repositories does not appear to configure its own runtime linking paths correctly, so we have to supply the path manually. On a 64-bit Ubuntu 16.04 system linux system for example, before running libhand you may need to run:
-```bash
-# Ensure path exists first: on 32-bit, x86_64 is replaced with i386. Replace OGRE version with whatever was installed (likely OGRE-1.9.0, OGRE-1.8.0, or OGRE-1.7.4).
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/OGRE-1.9.0
-sudo ldconfig
-```
-Once the OGRE library path is configured, you can launch the graphical pose designer from the build directory:
-```
-./hand_cpp/source/pose_designer
-```
-...and then use the file dialog box to open hand_model/scene_spec.yml to design hand poses! From the Pose Designer you can use press 'r' to open another dialog box to load some pre-defined hand pose (located in poses/*.yml). Toggle the help popup by pressing 'h'.
-
-What's contained in this distribution?
-----------------------------------------
-
-The file INSTALL.txt contains instructions on how to compile and set up
-LibHand. Here is a general overview of the LibHand directory structure.
+Here is a general overview of the LibHand directory structure.
 
 - hand_cpp - compile this first.
  The hand_cpp directory provides the LibHand C++ library and the
@@ -122,12 +101,12 @@ with different hand poses.
 - poses - contains some example hand poses as YAML files, to be used with
   the pose_designer and the example code for both C++ and MATLAB.
 
-Citation
-----------------------------------------
+## Citation
 
-  * If this software or its derivative is used to produce an academic
+If this software or its derivative is used to produce an academic
 publication, you are required to cite this work by using the following
-citation or an alternate form provided on "http://www.libhand.org/" :
+citation or an alternate form provided on "http://www.libhand.org/":
+
 ```
     @misc{libhand,
       author = "Marin \v{S}ari\'{c}",
@@ -138,8 +117,7 @@ citation or an alternate form provided on "http://www.libhand.org/" :
     }
 ```
 
-License
-----------------------------------------
+## License
 
 LibHand is available under a derivative of a BSD-license that requires the
 academic community to provide attribution to LibHand by means of
@@ -148,8 +126,7 @@ software in academic and non-academic, commercial and non-commercial,
 open-source and closed-source settings, but you have to give proper
 credit. Please see the license.txt file for the exact licensing information.
 
-The Hand 3D Model License
-----------------------------------------
+## The Hand 3D Model License
 
 LibHand comes with a textured, rigged and skinned realistic model of a human
 hand. The LibHand 3D Hand Model is located in the hand_model directory and
@@ -167,3 +144,18 @@ LibHand license is the BSD license with an added clause that requires
 academic citation. You should have received a copy of the LibHand license
 (the license.txt file) along with LibHand. If not, see
 <http://www.libhand.org/>
+
+## Copyright
+```
+LibHand v0.9
+Copyright (c) 2011, Marin Saric <marin.saric@gmail.com>
+All rights reserved.
+http://www.libhand.org/
+
+LibHand v0.9.z
+Copyright (c) 2014-, Various Authors
+Maintainer: Shasheen Ediriweera <shasheene@gmail.com>
+All rights reserved.
+http://github.com/jonkeane/libhand -- the most up-to-date information on LibHand.
+```
+
