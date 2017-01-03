@@ -1,4 +1,4 @@
-# LibHand [![Build Status](https://travis-ci.org/shasheene/libhand-experimental.svg?branch=continuous_integration_testing)](https://travis-ci.org/shasheene/libhand-experimental) [![Build status](https://ci.appveyor.com/api/projects/status/0o29nwx1h280xb9t?svg=true&passingText=Windows%20Build%3A%20passing&failingText=Windows%20Build%3A%20failing&pendingText=Windows%20Build%3A%20pending)](https://ci.appveyor.com/project/shasheene/libhand-experimental)
+# LibHand [![Build Status](https://travis-ci.org/libhand/libhand.svg?branch=master)](https://travis-ci.org/libhand/libhand) [![Build status](https://ci.appveyor.com/api/projects/status/0o29nwx1h280xb9t?svg=true&passingText=Windows%20Build%3A%20passing&failingText=Windows%20Build%3A%20failing&pendingText=Windows%20Build%3A%20pending)](https://ci.appveyor.com/project/libhand/libhand)
 
 <a href="docs/images/relaxed_large.png"><img height=200 width=200 src="docs/images/relaxed_large.png"></a>
 <a href="docs/images/a_ok_large.png"><img height=200 width=200 src="docs/images/a_ok_large.png"></a>
@@ -156,6 +156,6 @@ LibHand v0.9.z
 Copyright (c) 2014-, Various Authors
 Maintainer: Shasheen Ediriweera <shasheene@gmail.com>
 All rights reserved.
-http://github.com/jonkeane/libhand -- the most up-to-date information on LibHand.
+http://github.com/libhand/libhand -- the most up-to-date information on LibHand.
 ```
 
