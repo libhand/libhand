@@ -233,15 +233,26 @@ root_.reset(new Root("", "", "hand_renderer.log"));
   root_->installPlugin(gl_plugin_.get());
   root_->installPlugin(octree_plugin_.get());
 #else
-  root_->loadPlugin("Plugin_OctreeZone");
-  root_->loadPlugin("Plugin_PCZSceneManager");
+  #ifdef __APPLE__
+    root_->loadPlugin("/usr/local/opt/ogre/lib/libPlugin_OctreeZone");
+    root_->loadPlugin("/usr/local/opt/ogre/lib/libPlugin_PCZSceneManager");
+  #else
+    root_->loadPlugin("Plugin_OctreeZone");
+    root_->loadPlugin("Plugin_PCZSceneManager");
+  #endif
   #ifdef WIN32
     //FIXME: Windows build currently only supports Release build (Debug needs _d appended to the strings) 
     root_->loadPlugin("RenderSystem_Direct3D9");
+  #elif __APPLE__
+    root_->loadPlugin("/usr/local/opt/ogre/lib/libRenderSystem_GL");
   #else
     root_->loadPlugin("RenderSystem_GL");
   #endif
-  root_->loadPlugin("Plugin_OctreeSceneManager");
+  #ifdef __APPLE__
+    root_->loadPlugin("/usr/local/opt/ogre/lib/libPlugin_OctreeSceneManager");
+  #else
+    root_->loadPlugin("Plugin_OctreeSceneManager");
+  #endif
 #endif
 
   RenderSystemList render_systems = root_->getAvailableRenderers();

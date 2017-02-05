@@ -1,12 +1,19 @@
 CMAKE_MINIMUM_REQUIRED (VERSION 2.8.6)
 
 IF(APPLE)
+  FIND_PACKAGE(Boost REQUIRED)
+  INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
+  LINK_DIRECTORIES(${Boost_LIBRARY_DIRS})
   LIST(APPEND CMAKE_PREFIX_PATH "/opt/local")
   LIST(APPEND CMAKE_MODULE_PATH "/opt/local/share/cmake/modules")
+  LIST(APPEND CMAKE_MODULE_PATH "/usr/local/opt/ogre/CMake")
   LIST(APPEND CMAKE_FRAMEWORK_PATH "/opt/local/Library/Frameworks")
   SET(CMAKE_FIND_LIBRARY_SUFFIXES ".a;.framework;.dylib;.so")
-  LIST(APPEND LibHand_EXTRA_LIBS "-lboost_system -lboost_date_time -lz -lm -lbz2")
   SET(CMAKE_OSX_DEPLOYMENT_TARGET "10.9")
+  FIND_LIBRARY(COCOA_LIB Cocoa)
+  FIND_LIBRARY(IOKIT_LIB IOKit)
+  SET(LibHand_EXTRA_LIBS ${LIBS} ${COCOA_LIB} ${IOKIT_LIB})
+  LIST(APPEND LibHand_EXTRA_LIBS "-lboost_filesystem -lboost_system -lboost_date_time -lz -lm -lbz2")
 ELSEIF(UNIX)
     LIST(APPEND CMAKE_MODULE_PATH "/usr/share/OGRE/cmake/modules")
     LIST(APPEND LibHand_EXTRA_LIBS "-ldl -lXt -lboost_filesystem -lboost_system")
@@ -106,6 +113,7 @@ SET(MACSRCS "")
 
 IF(APPLE)
   LIST(APPEND MACSRCS "mac_app_loop.mm")
+  SET(CMAKE_MACOSX_RPATH 1)
 ENDIF()
 
 ADD_LIBRARY(hand_utils
