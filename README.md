@@ -50,12 +50,13 @@ LibHand v0.9.z is currently actively developed and/or supported on
 - Debian Jessie x86_64 and armhf
 - Ubuntu 12.04/14.04/16.04 x86_64 systems.
 - Windows 7/8/10 x86_64
+- macOS Sierra 10.12
 
 Any Debian/Ubuntu derivative (such as Linux Mint) should of course work fine without any modifications to the instructions. See below for detailed instructions.
 
 Other POSIX operating systems, and Linux distributions, CPU architectures etc should work fine, assuming you can satifying the software dependencies.
 
-MacOS X support is currently unmaintained. LibHand v0.9.z's Matlab bindings are also unmaintained. Historical information can be found in the out-of-date and deprecated INSTALL.txt file. Matlab bindings may either updated or removed entirely in a subsequent LibHand release.
+LibHand v0.9.z's Matlab bindings are unmaintained. Historical information can be found in the out-of-date and deprecated INSTALL.txt file. Matlab bindings may either updated or removed entirely in a subsequent LibHand release.
 
 ### Software dependencies
 LibHand v0.9.0 was released by Marin Saric in 2011 after being developed against following dependencies
@@ -71,6 +72,7 @@ LibHand v0.9.z is currently developed against the highest common dependency vers
 ### Building LibHand
 - See [Building LibHand on Debian/Ubuntu (and derivatives)](docs/build_instructions/debian/BUILD.DEBIAN.md)
 - See [Building LibHand on Windows](docs/build_instructions/windows/BUILD.WINDOWS.md)
+- See [Building LibHand on macOS](docs/build_instructions/macos/BUILD.MACOS.md)
 
 # What's contained in this distribution?
 
