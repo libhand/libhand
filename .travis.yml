@@ -82,12 +82,25 @@ matrix:
             - tk
             - libboost-system-dev
             - libboost-filesystem-dev
- 
+    # macOS
+    - os: osx
+      osx_image: xcode8.2
+      compiler: cmake
+      sudo: required
+      before_install:
+        - brew update
+        - brew tap homebrew/science
+        - brew tap osrf/simulation
+        - brew update
+        # brew is already installed, but can install this version, first `brew unlink boost`
+        # uninstall numpy so that brew will not complain
+        - /usr/bin/yes | pip uninstall numpy
+        - brew install opencv
+        - travis_wait brew install ogre
+
 # Setup a X Virtual Framebuffer to allow opening of X display
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+  - "if [ ${TRAVIS_OS_NAME:-'linux'} = 'linux' ]; then export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start; sleep 3;  fi"
 
 script:
   - mkdir build
@@ -108,8 +121,6 @@ script:
   - popd
   - popd
     # Setup runtime link paths (see BUILD.DEBIAN.md)
-  - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${OGRE_HOME}
-  - sudo ldconfig
-    # Run LibHand integration test
-  - ./examples/build/ogre_rendering_test .
-
+  - "if [ ${TRAVIS_OS_NAME:-'linux'} = 'linux' ]; then export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${OGRE_HOME}; sudo ldconfig; fi"
+    # Run LibHand integration test (only on linux, macos on travis doesn't seem to support xvfb)
+  - "if [ ${TRAVIS_OS_NAME:-'linux'} = 'linux' ]; then ./examples/build/ogre_rendering_test .; fi"
