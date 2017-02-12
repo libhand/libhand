@@ -59,12 +59,12 @@ MacOS X support is currently unmaintained. LibHand v0.9.z's Matlab bindings are 
 
 ### Software dependencies
 LibHand v0.9.0 was released by Marin Saric in 2011 after being developed against following dependencies
-- [OpenCV](https://en.wikipedia.org/wiki/OpenCV) (Open Source Computer Vision) v2.3.y
+- [OpenCV](https://en.wikipedia.org/wiki/OpenCV) (Open Source Computer Vision) v2.3.z
 - [OGRE](https://en.wikipedia.org/wiki/OGRE) (Object Orientated Graphics Rendering Engine) v1.7.4
 	- OpenGL headers (GL/glu.h)
-- [Tcl/Tk](https://en.wikipedia.org/wiki/Tcl) (likely v8.5.y)
+- [Tcl/Tk](https://en.wikipedia.org/wiki/Tcl) (likely v8.5.z)
 - [CMake](https://en.wikipedia.org/wiki/CMake) v2.8.6
-- [Boost](http://www.boost.org/) (likely v1.46.y)
+- [Boost](http://www.boost.org/) (likely v1.46.z)
 
 LibHand v0.9.z is currently developed against the highest common dependency version that is easily accessible on the supported platforms. Building against newer dependency versions may work fine, of course. 
 
