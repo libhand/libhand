@@ -56,7 +56,7 @@ Any Debian/Ubuntu derivative (such as Linux Mint) should of course work fine wit
 
 Other POSIX operating systems, and Linux distributions, CPU architectures etc should work fine, assuming you can satifying the software dependencies.
 
-LibHand v0.9.z's Matlab bindings are unmaintained. Historical information can be found in the out-of-date and deprecated INSTALL.txt file. Matlab bindings may either updated or removed entirely in a subsequent LibHand release.
+LibHand v0.9.z's Matlab bindings are unmaintained. Matlab bindings may either updated or removed entirely in a subsequent LibHand release. See [#6](https://github.com/libhand/libhand/issues/6) for further discussion.
 
 ### Software dependencies
 LibHand v0.9.0 was released by Marin Saric in 2011 after being developed against following dependencies
