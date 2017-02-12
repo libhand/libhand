@@ -10,7 +10,7 @@ IF(WIN32)
   FIND_PACKAGE(OpenCV REQUIRED)
 ENDIF()
 
-include_directories(${LibHand_INCLUDE_DIRS})
+INCLUDE_DIRECTORIES(${LibHand_INCLUDE_DIRS})
 
 
 ADD_EXECUTABLE(bend_one_finger bend_one_finger.cc)
