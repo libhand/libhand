@@ -52,7 +52,7 @@ At this point, we are ready to use the supplied Bash helper script to build LibH
 
 1. Open a Git Bash shell run the following commands
   *
-	git clone https://github.com/[user]/libhand
+	git clone https://github.com/libhand/libhand
   	cd libhand
   	# The following command will take a while
   	./docs/build_instructions/windows/download_and_build.sh

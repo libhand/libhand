@@ -15,7 +15,7 @@ On a fresh Ubuntu 12.04/14.04/16.04 install, if apt-get is unable to locate the 
 
 ### Compiling libhand and pose_designer
 ```bash
-git clone https://github.com/[user]/libhand
+git clone https://github.com/libhand/libhand
 cd libhand
 mkdir build
 cd build
